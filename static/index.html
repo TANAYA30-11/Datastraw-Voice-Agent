@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Skincare | AI Voice Support</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-icon">✿</div>
+            <div>
+                <h2>AURA</h2>
+                <span> S K I N C A R E </span>
+            </div>
+        </div>
+        <div class="nav-title">
+            <h3>AI Voice Customer Support</h3>
+            <p>Ask questions · Track orders · Get support</p>
+        </div>
+        <span class="ai-badge">✦ Powered by AI</span>
+    </header>
+
+    <main class="dashboard">
+        <section class="card voice-card">
+            <div class="agent">
+                <div class="avatar">🎧</div>
+                <div>
+                    <h1>Talk to Aria</h1>
+                    <p>Aria — Your Aura Skincare Support Agent</p>
+                    <small>Friendly · Professional · Always here to help</small>
+                </div>
+            </div>
+
+            <div class="voice-area">
+                <button id="micButton" class="mic-button" aria-label="Start voice input">
+                    🎙️
+                </button>
+                <h3 id="voiceTitle">Talk to Aria</h3>
+                <p id="voiceMessage">Click the microphone and ask your question</p>
+                <div class="status">
+                    <span class="status-dot"></span>
+                    <span id="callStatus">Ready to start</span>
+                </div>
+            </div>
+
+            <div class="call-buttons">
+                <button id="startCall" class="btn btn-green">☎ Start Call</button>
+                <button id="endCall" class="btn btn-red" disabled>■ End Call</button>
+            </div>
+            <p class="hint">Allow microphone access when your browser asks.</p>
+        </section>
+
+        <section class="card orders-card">
+            <h2>📦 Test Orders Helper</h2>
+            <p class="muted">Click an order to look up its details.</p>
+
+            <div class="order-item" data-order="ORD-101">
+                <div class="order-heading">
+                    <strong>ORD-101</strong>
+                    <span class="pill orange">Out for Delivery</span>
+                </div>
+                <p>Priya Sharma · Vitamin C Serum</p>
+                <small>Total: ₹699 · Expected by 6 PM today</small>
+            </div>
+
+            <div class="order-item" data-order="ORD-102">
+                <div class="order-heading">
+                    <strong>ORD-102</strong>
+                    <span class="pill blue">Delivered</span>
+                </div>
+                <p>Rahul Verma · Hydrating Sunscreen SPF 50</p>
+                <small>Total: ₹499 · Delivered 14 days ago</small>
+            </div>
+
+            <div class="order-item" data-order="ORD-103">
+                <div class="order-heading">
+                    <strong>ORD-103</strong>
+                    <span class="pill purple">Processing</span>
+                </div>
+                <p>Ananya Patel · Face Wash + Toner</p>
+                <small>Total: ₹850 · Cancellation eligible</small>
+            </div>
+
+            <form id="orderForm" class="order-form">
+                <label for="orderId">Find an order</label>
+                <div class="input-row">
+                    <input id="orderId" placeholder="Enter order ID, e.g. ORD-101" required>
+                    <button class="btn btn-purple" type="submit">Search</button>
+                </div>
+            </form>
+            <div id="orderResult" class="result-box" aria-live="polite">
+                Your order details will appear here.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>📋 Call Transcript</h2>
+            <p class="muted">Your conversation with Aria will appear here.</p>
+            <div id="transcript" class="transcript">
+                <p class="empty-state">Start a call to begin your conversation.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>✨ Brand Information</h2>
+            <ul class="policy-list">
+                <li>Free shipping on orders above ₹499; otherwise ₹50.</li>
+                <li>Standard delivery: 3–5 business days.</li>
+                <li>Returns within 7 days for unopened, unused products in original packaging.</li>
+                <li>Report damaged products within 48 hours with photos.</li>
+                <li>Cancellation is allowed only while the order is Processing.</li>
+                <li>COD up to ₹2500, payable by cash or UPI.</li>
+            </ul>
+        </section>
+
+        <section class="card summary-card">
+            <h2>🧾 Call Summary</h2>
+            <p class="muted">Structured summary after the call ends.</p>
+            <pre id="summary">{ 
+  "status": "Waiting for call",
+  "customer_intent": null,
+  "order_id": null,
+  "resolution_status": null,
+  "call_summary": null
+}</pre>
+            <button id="downloadSummary" class="btn btn-purple" disabled>
+                ↓ Download JSON Summary
+            </button>
+        </section>
+    </main>
+
+    <footer>Aura Skincare · AI Voice Support Agent · Built with care ♡</footer>
+    <script src="/static/script.js"></script>
+</body>
+</html>
