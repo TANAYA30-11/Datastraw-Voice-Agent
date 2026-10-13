@@ -18,10 +18,3 @@ A browser-based AI Voice Customer Support Agent built for the fictional D2C orga
 * **Deployment:** Render / Railway / Hugging Face Spaces[cite: 5]
 
 ---
-
-## ⚙️ Local Setup & Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/your-username/datastraw-voice-agent.git](https://github.com/your-username/datastraw-voice-agent.git)
-   cd datastraw-voice-agent
